@@ -1,7 +1,7 @@
 # Gwyddion_AFM_profiles_batch
 Calculate 2D material height difference (i.e. thickness) from exported CSV file of selected profiles from Gwyddion.
 
-The thickenss is calculate from the differemce of the z-axis (height) of the 1st and the last point in the line profile selected. i.e.:
+The thickenss is calculate from the difference of the z-axis (height) of the 1st and the last point in the line profile selected. i.e.:
 
 thickness=|Z<sub>1</sub>-Z<sub>last</sub>|
 
