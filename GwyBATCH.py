@@ -5,9 +5,8 @@ from datetime import datetime
 __author__='HeliumMH'
 
 # pure comma separated file as input format
-intro='---Gwy AFM line profiles batch processing program--- \nPlease enter the dir of the csv:\n'
-file_dir=input(intro)
-output_path=os.path.split(file_dir)[0]
+intro='---Gwy AFM line profiles batch processing program--- \nPlease enter the dir of the csv or use "quit" to exit'':\n'
+file_dir=input(intro).replace('"','')
 
 while file_dir != []:
     if file_dir=='quit':
@@ -17,6 +16,7 @@ while file_dir != []:
         file_dir = input(intro)
         continue
     else:
+        output_path = os.path.split(file_dir)[0]
         #read data
         data = pd.read_csv(file_dir,sep=';',header=None)
         df=pd.DataFrame(data)
@@ -39,6 +39,6 @@ while file_dir != []:
             n+=2
             nProfile+=1
 
-        file_dir = input(intro)
+        file_dir=input(intro).replace('"','')
         continue
 
